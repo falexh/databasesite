@@ -1,0 +1,10 @@
+<html>
+<h1>Update {{venue.name}} {{venue.max_seating}}:</h1>
+<form id="update-venue" action="/venues" method="post">
+    Venue Name: <input type="text" name="venue_name" value="{{venue.name}}"><br>
+    Venue Max Seating: <input type="number" name="max_seating" value="{{venue.max_seating}}"><br>
+    Venue City: <input type="text" name="city" value="{{venue.city}}"><br>
+</form>
+
+<button onclick="updateVenue({{venue.id}})">Update</button>
+</html>

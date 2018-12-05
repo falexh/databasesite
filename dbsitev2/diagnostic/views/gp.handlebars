@@ -1,0 +1,87 @@
+
+<html>
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="titleh1"> Guitar Players</h1>
+  </div>
+</div>
+
+<div class='container'>
+  <div class='row'>
+    <div class='col-lg-12'>
+
+        <form id="addPlayer" action="/gp" method="POST">
+          <div class="form-group">
+            <input type="name" class="form-control" name="fname" placeholder="first name"><br>
+            <input type="name" class="form-control" name="lname" placeholder="last name"><br>
+            <input type="name" class="form-control" name="guitar_type" placeholder="guitar type"><br>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Favorite Venue</label>
+              </div>
+              <select class="custom-select" name="fav_venue">
+                {{#each venues}}
+                <option value="{{id}}">{{name}}</option>
+                {{/each}}
+              </select>
+            </div>
+          </div>
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        </form>
+        <br>
+
+<!-- FILTER BY MOST PLAYED VENUE -->
+        <form id='filter_players' action='' method=''>
+          <label id="filterLabel"> Filter by Most Played Venue </label>
+          <select id='venue_filter' name="venue">
+            {{#each venues}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+          </select><br>
+          <input type="button" value="Filter" onclick="filterPlayersByVenue()">
+          <input type="button" value="Reset Filter" onclick="filterDefault()">
+        </form>
+        <br>
+        <br>
+
+<!-- SEARCH FUNCTION -->
+        <form id='search_people' action='' method=''>
+  <!--- this form does not submit directly, the button handles all the interaction with backend -->
+          <label class="pText"> Search guitar players with first name starting with:</label>
+          <input id='fnameStr' type='text' name='fnameStr' value=''>
+          <input type="button" value="Search" onclick="searchPlayersByFirstName()">
+          <input type="button" value="Reset Search Results" onclick="filterDefault()">
+
+        </form>
+        <br>
+        <br>
+
+        <div class="container">
+              <table class="table table-dark">
+                <thead>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Guitar Type</th>
+                    <th>Most Played Venue</th>
+                </thead>
+                <tbody>
+                  {{#each players}}
+                    <tr>
+                        <td>{{fname}}</td>
+                        <td>{{lname}}</td>
+                        <td>{{guitar_type}}</td>
+                        <td>{{fav_venue}}</td>
+                        <td><button class="btn btn-danger btn-lg stretch" onclick="deletePlayer({{id}})">Delete</button></td>
+                        <td><a href="/gp/{{id}}" class="btn btn-primary btn-lg active stretch" tabindex="-1" role="button" aria-disabled="true">Update</a></td>
+                    </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+</html>

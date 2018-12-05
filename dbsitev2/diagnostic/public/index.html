@@ -1,0 +1,66 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>db//site</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Mirza|Righteous|Russo+One" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+</head>
+<body>
+
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background: #77a1d3;">
+    <a class="navbar-brand" href="/">db//site</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Databases
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/gp">Guitar Players</a>
+            <a class="dropdown-item" href="/bands">Bands</a>
+            <a class="dropdown-item" href="/venues">Venues</a>
+            <a class="dropdown-item" href="/labels">Labels</a>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <br>
+  <div class="container">
+    <div class="jumbotron">
+      <p class="pText2"> Use the dropdown above to navigate to each entity. </p>
+      <p class="pText2"> From each page, you can update, create, read, and delete values for that entity. </p>
+      <br>
+
+      <p class="pText2"><a href="/players_bands" class="anchorText"> Change Bands for a Guitar Player (change M-to-M relationship) </a></p>
+      <p class="pText2"><a href="/gp/1" class="anchorText">Change Most Played Venue of a Guitar Player (change 1-to-M relationships) </a> </p>
+      <br>
+      <hr style="border-color:black;">
+      <p class="pText">made with<br><br><i class="fab fa-node fa-5x navBrand stretch"></i> </p>
+    </div>
+  </div>
+
+
+
+  <br>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

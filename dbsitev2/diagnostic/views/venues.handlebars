@@ -1,0 +1,51 @@
+<html>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="titleh1"> Venues</h1>
+  </div>
+</div>
+
+<div class='container'>
+  <div class='row'>
+    <div class='col-lg-12'>
+
+        <form id="addVenue" action="/venues" method="POST">
+          <div class="form-group">
+            <input type="name" class="form-control" name="venue_name" placeholder="Venue Name"><br>
+            <input type="number" class="form-control" name="max_seating" placeholder="Max Seating"><br>
+            <input type="name" class="form-control" name="city" placeholder="Venue City"><br>
+          </div>
+
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        </form>
+        <br>
+        <br>
+
+
+
+        <div class='container'>
+              <table class="table table-dark">
+                <thead>
+                    <th>Venue Name</th>
+                    <th>Max Seating</th>
+                    <th>City</th>
+                </thead>
+                <tbody>
+                  {{#each venues}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{max_seating}}</td>
+                        <td>{{city}}</td>
+                        <td><button class="btn btn-danger btn-lg stretch" onclick="deleteVenue({{id}})">Delete</button></td>
+                        <td><a href="/venues/{{id}}" class="btn btn-primary btn-lg active stretch" tabindex="-1" role="button" aria-disabled="true">Update</a></td>
+                    </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</html>

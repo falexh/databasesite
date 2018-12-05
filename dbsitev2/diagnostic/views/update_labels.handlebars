@@ -1,0 +1,9 @@
+<html>
+<h1>Update {{label.name}} {{label.HQ_city}}:</h1>
+<form id="update-label" action="/labels" method="post">
+    Label Name: <input type="text" name="label_name" value="{{label.name}}"><br>
+    HQ City: <input type="text" name="HQ_city" value="{{label.HQ_city}}"><br>
+</form>
+
+<button onclick="updateLabel({{label.id}})">Update</button>
+</html>

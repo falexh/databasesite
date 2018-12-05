@@ -1,0 +1,136 @@
+html{
+  height: 100%;
+}
+
+
+
+/*Webkit animations*/
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(360deg);
+		}
+}
+
+/*NAV Brand*/
+.navBrand{
+  -webkit-animation: rotation 25s infinite linear;
+  margin: 0 auto;
+  color: moccasin;
+}
+
+/*Stretch Effect*/
+.stretch{
+  -webkit-transition: width 0.80s;
+  transition: width 0.80s;
+  width: 100px;
+}
+.stretch:hover {
+    width: 150px;
+}
+
+/* MAIN PAGE */
+
+.pText{
+  color: sandybrown;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pText2{
+  color: palegoldenrod;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.anchorText{
+  color: turquoise;
+  font-size: 20px;
+  font-family: Righteous;
+}
+
+.updateText{
+  font-size: 1px;
+  font-family: Righteous;
+}
+
+.titleText{
+  color: palegoldenrod;
+  font-family: Righteous;
+}
+
+/* NAVBAR */
+.navbar-brand {
+  color: azure;
+  font-family: Righteous;
+}
+
+.landingStatement{
+  color: white;
+}
+
+
+.selection{
+  color:black
+  font-family: Russo;
+}
+
+.titleh1{
+  color:white;
+  font-family: Chicle;
+}
+
+
+h3{
+  color: coral;
+}
+
+#content{
+  text-align: center;
+  padding-top: 25%;
+  text-shadow: 0px 3px 4px black,
+               0px 9px 12px blue;
+}
+
+body{
+  background-color: black;
+  background-position: center;
+}
+
+hr{
+  width: 400px;
+  border-top: 2px solid azure;
+
+}
+
+#brander{
+  color: lightblue;
+}
+
+#homer{
+  color: azure;
+}
+
+#about{
+  color: azure;
+}
+
+.jumbotron{
+  background-color: indigo;
+}
+
+.jStyle{
+  background-color: lightgoldenrodyellow;
+  color: black;
+}
+
+/*Filter on gp.handlebars */
+#filterLabel{
+  color: azure;
+}
+
+th{
+  color: moccasin;
+}

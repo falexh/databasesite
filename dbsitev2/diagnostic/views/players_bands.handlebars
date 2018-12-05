@@ -1,0 +1,57 @@
+<html>
+
+<div class="container">
+  <br>
+  <h2 class="pText"> Associate Bands with a Guitar Player </h2>
+      <form id="add_players_bands" action="/players_bands" method="post">
+      <p class="landingStatement">Guitar Player:</p> <select name='pid'>
+          {{#each players}}
+            <option value='{{pid}}'>{{fname}} {{lname}}</option>
+          {{/each}}
+      </select>
+      <br>
+      <br>
+      <br>
+      <p class="landingStatement">Bands:</p><select multiple name="bands">
+          {{!-- We display title but the value that is submitted through the form is actually the certificate's id --}}
+          {{#each bands}}
+          <option value="{{bid}}">{{name}}</option>
+          {{/each}}
+      </select><br>
+      <br>
+      <input type="submit" value="Submit">
+      </form>
+</div>
+
+
+<br/>
+
+<div class="container">
+  <div class="jumbotron">
+    <div class="container">
+      <h3> List of Guitar Players with their Bands </h3>
+      <br>
+      <table class="table table-dark">
+          <thead>
+              <th>Player Name</th>
+              <th>Band Name</th>
+          </thead>
+          <tbody>
+              {{#each players_with_bands}}
+              <tr>
+                  <td>{{player_name}}</td>
+                  <td>{{band_name}}</td>
+                  <td><button class="btn btn-danger btn-lg stretch" onclick="deletePlayersBands({{pid}},{{bid}})">Delete</button></td>
+                  <td><a href="/players_bands/{{id}}" class="btn btn-primary btn-lg active stretch" tabindex="-1" role="button" aria-disabled="true">Update</a></td>
+              </tr>
+              {{else}}
+              <b> No people with any certifications found! Grant some using the form. </b>
+              {{/each}}
+
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<br>
+</html>

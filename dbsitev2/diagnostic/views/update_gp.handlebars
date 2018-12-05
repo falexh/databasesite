@@ -1,0 +1,32 @@
+<html>
+<h1 class="pText">Update {{player.fname}} {{player.lname}}:</h1>
+
+
+<div class='container'>
+  <div class='row'>
+    <div class='col-lg-12'>
+      <form id="update-player" action="/gp" method="post">
+        <div class="form-group">
+          <p class="titleText">First name:</p> <input class="form-control" type="text" name="fname" value="{{player.fname}}"><br>
+          <p class="titleText">Last name:</p> <input class="form-control" type="text" name="lname" value="{{player.lname}}"><br>
+          <p class="titleText">Guitar Type:</p> <input class="form-control" type="text" name="guitar_type" value="{{player.guitar_type}}"><br>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Favorite Venue</label>
+            </div>
+            <select class="custom-select" name="fav_venue">
+              {{#each venues}}
+              <option value="{{id}}">{{name}}</option>
+              {{/each}}
+            </select>
+          </div>
+          <button class="btn btn-primary btn-lg" onclick="updatePlayer({{player.id}})">Update</button>
+      </form>
+    </div>
+  </div>
+ </div>
+</div>
+
+
+<script defer> selectVenue({{player.fav_venue}});</script>
+</html>
